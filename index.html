@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10377c">
+  <meta name="description" content="Trilha interativa de Filosofia para o Ensino Médio, com seis módulos e trinta subtemas.">
+  <title>Filosofia | Trilha de Aprendizagem</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Início da trilha de Filosofia">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 7.5C11.8 4.8 7.1 4.9 3.5 6.5v18c3.6-1.6 8.3-1.7 12.5 1 4.2-2.7 8.9-2.6 12.5-1v-18c-3.6-1.6-8.3-1.7-12.5 1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 7.5v18" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <span class="brand__copy"><strong>FILOSOFIA</strong><small>Trilhas de aprendizagem</small></span>
+      </a>
+      <nav class="topnav" aria-label="Navegação principal">
+        <a class="topnav__link" href="#inicio">Início</a>
+        <a class="topnav__link is-active" href="#modulos" aria-current="page">Módulos</a>
+      </nav>
+      <div class="topbar__tools">
+        <span class="topbar__audience">ENSINO MÉDIO</span>
+        <button id="theme-toggle" class="icon-button" type="button" title="Alternar modo claro e escuro" aria-label="Alternar modo claro e escuro">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.8A8.8 8.8 0 0 1 8.2 3.8 8.8 8.8 0 1 0 20.2 15.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio" class="main-container">
+    <div class="breadcrumb"><span>Área de conhecimento</span><span class="breadcrumb__chevron">›</span><strong>Ciências Humanas · Filosofia</strong></div>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__deco hero__deco--one" aria-hidden="true"></div>
+      <div class="hero__deco hero__deco--two" aria-hidden="true"></div>
+      <div class="hero__body">
+        <span class="hero__eyebrow"><span class="hero__eyebrow-dot"></span> PERCURSO DE APRENDIZAGEM</span>
+        <h1 id="hero-title">Filosofia: pensar, questionar, compreender.</h1>
+        <p>Uma jornada pelas grandes perguntas da humanidade — das narrativas míticas à arte, do conhecimento à vida em sociedade.</p>
+        <div class="hero__stats" aria-label="Estrutura da trilha">
+          <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.7"/></svg> 6 módulos</span>
+          <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5c-3-2-6.5-2-9-.6v14c2.5-1.4 6-1.4 9 .6 3-2 6.5-2 9-.6v-14c-2.5-1.4-6-1.4-9 .6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 5v14" stroke="currentColor" stroke-width="1.7"/></svg> 30 subtemas</span>
+          <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m4 12 5 5L20 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Progresso individual</span>
+        </div>
+      </div>
+      <div class="hero-progress" aria-label="Seu progresso na trilha">
+        <div class="progress-ring" id="progress-ring"><span class="progress-ring__content"><strong id="progress-percent">0%</strong><small>concluído</small></span></div>
+        <strong class="hero-progress__title">Seu percurso</strong>
+        <span class="hero-progress__subtitle"><span id="progress-count">0</span> de 30 subtemas concluídos</span>
+        <div class="hero-progress__bar"><span id="progress-bar" style="width:0%"></span></div>
+      </div>
+    </section>
+
+    <section class="curriculum" id="modulos" aria-labelledby="module-title">
+      <div class="section-heading">
+        <div><span class="section-heading__eyebrow">ORGANIZAÇÃO CURRICULAR</span><h2 id="module-title">Módulos de Filosofia</h2><p>Selecione um módulo para visualizar seus cinco subtemas.</p></div>
+        <div class="section-heading__actions"><button class="text-button" id="expand-toggle" type="button">Expandir todos <span aria-hidden="true">⌄</span></button></div>
+      </div>
+      <div class="search-area">
+        <label class="search" for="topic-search">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.6" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input id="topic-search" type="search" placeholder="Buscar módulo ou subtema..." autocomplete="off">
+          <span class="search__shortcut">30 temas</span>
+        </label>
+        <p class="search-area__hint">Clique em um cartão para ler, fazer anotações e registrar sua conclusão.</p>
+      </div>
+      <div id="module-list" class="modules" aria-live="polite"></div>
+      <div id="no-results" class="no-results" hidden>Nenhum módulo ou subtema corresponde à sua pesquisa.</div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__info"><span class="footer__logo">φ</span><div><strong>Filosofia • Ensino Médio</strong><p>Seus avanços e anotações são salvos neste navegador. Não é necessário criar uma conta.</p></div></div>
+      <div class="footer__actions">
+        <button class="footer-button" id="export-button" type="button">Exportar progresso</button>
+        <button class="footer-button" id="import-button" type="button">Importar registro</button>
+        <input id="import-file" type="file" accept=".json,application/json" hidden>
+        <button class="footer-button footer-button--muted" id="reset-button" type="button">Reiniciar</button>
+      </div>
+    </footer>
+  </main>
+
+  <dialog id="topic-dialog" class="topic-dialog" aria-labelledby="dialog-title">
+    <div class="topic-dialog__inner">
+      <header class="dialog-header">
+        <div class="dialog-header__text"><span id="dialog-module" class="dialog-eyebrow"></span><h2 id="dialog-title">Título do subtema</h2></div>
+        <button id="dialog-close" class="dialog-close" type="button" aria-label="Fechar subtema">×</button>
+      </header>
+      <div class="dialog-content"><div class="dialog-main">
+        <span class="dialog-label">PARA COMEÇAR A REFLETIR</span>
+        <p id="dialog-description" class="dialog-description"></p>
+        <div class="reflection"><span class="reflection__icon" aria-hidden="true">?</span><div><strong>Pergunta norteadora</strong><p id="dialog-question"></p></div></div>
+      </div>
+      <aside class="notes-panel"><label for="topic-notes">Minhas anotações</label><p>Registre ideias, autores ou questões para aprofundar em aula.</p><textarea id="topic-notes" rows="6" placeholder="Escreva suas reflexões aqui..."></textarea><span id="save-message" class="save-message" role="status"></span></aside></div>
+      <footer class="dialog-footer"><span id="dialog-status" class="dialog-current-status"></span><div class="dialog-footer__buttons"><button id="save-notes" type="button" class="dialog-button dialog-button--secondary">Salvar anotações</button><button id="finish-topic" type="button" class="dialog-button dialog-button--primary">Marcar como concluído</button></div></footer>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

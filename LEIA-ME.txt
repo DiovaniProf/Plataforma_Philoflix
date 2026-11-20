@@ -1,0 +1,32 @@
+TRILHA DE FILOSOFIA — MODELO VISUAL BOOKPLAY
+============================================
+
+CONTEÚDO DO PACOTE
+- index.html: estrutura da página.
+- styles.css: cores, cartões, barras de módulos e responsividade.
+- script.js: 6 módulos, 30 subtemas, funcionamento das listas,
+  progresso, anotações, tema claro/escuro e importação/exportação.
+
+COMO USAR
+1. Extraia o ZIP em uma pasta de seu computador.
+2. Mantenha os três arquivos juntos.
+3. Abra index.html com Google Chrome, Edge ou Firefox.
+4. Clique em uma faixa azul para expandir os subtemas.
+5. Clique em um cartão para abrir a leitura, registrar anotações
+   e marcar como concluído.
+
+PARA EDITAR OS CONTEÚDOS
+Abra script.js em um editor de texto e altere o array MODULOS,
+localizado no início do arquivo. Cada módulo contém cinco temas
+com os campos: titulo, texto e pergunta.
+
+SALVAMENTO E LIMITAÇÕES
+O progresso e as anotações são salvos pelo próprio navegador
+(localStorage), no computador utilizado. Não há servidor,
+autenticação ou banco de dados nesta versão. O botão "Exportar
+progresso" salva um arquivo JSON; "Importar registro" recupera
+o progresso em outro navegador.
+
+IMPORTANTE
+O HTML usa JavaScript (e não Java). São linguagens diferentes;
+JavaScript é o padrão para a interatividade deste tipo de página.
